@@ -1,0 +1,32 @@
+body {
+  line-height: var(--line-height);
+  font-family: var(--font-family);
+}
+
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: var(--line-height-short);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+a:not([class]) {
+  text-decoration: none;
+  text-decoration-skip-ink: auto;
+  font-weight: bold;
+  color: currentColor;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
