@@ -36,5 +36,12 @@
     "unplugin-icons": "^0.19.1",
     "vite": "^5.0.3",
     "vitest": "^2.0.0"
+  },
+  "dependencies": {
+    "@lucia-auth/adapter-prisma": "^4.0.1",
+    "@lucia-auth/adapter-sqlite": "^3.0.2",
+    "@node-rs/argon2": "^1.8.3",
+    "@prisma/client": "^5.17.0",
+    "lucia": "^3.2.0"
   }
 }
