@@ -1,0 +1,8 @@
+@custom-media --viewport-below-sm (width <= 400px);
+@custom-media --viewport-below-md (width <= 700px);
+@custom-media --viewport-below-lg (width <= 900px);
+@custom-media --viewport-below-xl (width <= 1200px);
+@custom-media --viewport-above-sm (width >= 400px);
+@custom-media --viewport-above-md (width >= 700px);
+@custom-media --viewport-above-lg (width >= 900px);
+@custom-media --viewport-above-xl (width >= 1200px);

@@ -7,7 +7,7 @@
       }
 
       .flag {
-        fill: #d01c1c;
+        fill: #e94518;
       }
 
       @media (prefers-color-scheme: dark) {

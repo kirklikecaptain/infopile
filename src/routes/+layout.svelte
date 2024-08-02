@@ -1,7 +1,9 @@
-<slot></slot>
+<script lang="ts">
+  import "$lib/styles/global.css";
+  import Footer from "$lib/components/navigation/Footer.svelte";
+  import Header from "$lib/components/navigation/Header.svelte";
+</script>
 
-<style global>
-  @import "../styles/reset.css";
-  @import "../styles/variables.css";
-  @import "../styles/base.css";
-</style>
+<Header />
+<slot />
+<Footer />
