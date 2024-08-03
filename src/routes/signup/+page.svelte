@@ -7,7 +7,9 @@
 
 <main>
   <form method="post" use:enhance>
-    <h1>Create an account</h1>
+    <header>
+      <h1>Create an account</h1>
+    </header>
     <div>
       <label for="username">Username</label>
       <input name="username" id="username" />
@@ -19,10 +21,7 @@
     {#if form?.message}
       <p class="error">{form.message}</p>
     {/if}
-    <div class="button-row">
-      <a class="button secondary" href="/login">Log In</a>
-      <button data-scheme="primary">Sign Up</button>
-    </div>
+    <button data-scheme="primary">Sign Up</button>
   </form>
 </main>
 
@@ -38,7 +37,7 @@
 
   form {
     margin: auto;
-    max-width: 500px;
+    max-width: 400px;
     display: grid;
     gap: 1.5rem;
     padding: 1.5rem;
@@ -57,11 +56,5 @@
     padding: 4px;
     border: solid 1px var(--red-20);
     border-radius: var(--radius-sm);
-  }
-
-  .button-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
   }
 </style>

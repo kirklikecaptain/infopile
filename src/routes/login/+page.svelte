@@ -7,7 +7,7 @@
 
 <main>
   <form method="post" use:enhance>
-    <h1>Sign in to your account</h1>
+    <h1>Welcome back</h1>
     <div>
       <label for="username">Username</label>
       <input name="username" id="username" />
@@ -19,10 +19,7 @@
     {#if form?.message}
       <p class="error">{form.message}</p>
     {/if}
-    <div class="button-row">
-      <a class="button secondary" href="/signup">Sign Up</a>
-      <button data-scheme="primary">Log In</button>
-    </div>
+    <button data-scheme="primary">Log In</button>
   </form>
 </main>
 
@@ -57,10 +54,5 @@
     padding: 4px;
     border: solid 1px var(--red-20);
     border-radius: var(--radius-sm);
-  }
-  .button-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
   }
 </style>
