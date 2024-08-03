@@ -1,6 +1,22 @@
-import { auth } from "$lib/server/db";
+import { auth, db } from "$lib/server/db";
 import { fail } from "@sveltejs/kit";
-import type { Actions } from "./$types";
+import type { Actions, PageServerLoad } from "./$types";
+
+export const load: PageServerLoad = async () => {
+  const posts = await db.post.findMany({
+    include: {
+      author: {
+        select: {
+          username: true
+        }
+      }
+    }
+  });
+
+  return {
+    posts
+  };
+};
 
 export const actions: Actions = {
   logout: async (event) => {

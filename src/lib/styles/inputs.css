@@ -42,4 +42,5 @@ textarea {
   width: 100%;
   border: var(--border);
   border-radius: var(--radius-sm);
+  background-color: var(--neutral-05);
 }

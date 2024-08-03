@@ -154,10 +154,10 @@ ol[role="list"] {
 }
 
 button,
-input[type="button"],
-input[type="submit"],
-input[type="reset"] {
+input,
+textarea {
   font: inherit;
+  font-size: inherit;
 }
 
 a {

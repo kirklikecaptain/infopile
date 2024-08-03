@@ -14,9 +14,10 @@
     <nav>
       {#if data.user}
         <span>{data.user.username}</span>
-        <form use:enhance action="/?/logout" method="POST">
+        <form use:enhance action="/?/logout" method="post">
           <button>Log Out</button>
         </form>
+        <a href="/submit" class="button" data-scheme="accent">New Post</a>
       {:else}
         <a href="/login" class="button secondary">Log In</a>
         <a href="/signup" class="button" data-scheme="accent">Sign Up</a>
