@@ -9,7 +9,7 @@ const projectDir = dirname(fileURLToPath(import.meta.url));
 const config = {
   preprocess: sveltePreprocess({
     postcss: {
-      prependData: `@import "${projectDir}/src/lib/styles/config/breakpoints.css";`
+      prependData: `@import "${projectDir}/src/lib/styles/variables/breakpoints.css";`
     }
   }),
   kit: {

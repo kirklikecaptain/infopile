@@ -1,0 +1,45 @@
+:root {
+  --font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+  --text-xxl: 2rem;
+
+  --line-height-sm: 1;
+  --line-height-md: 1.2;
+  --line-height-lg: 1.5;
+
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-xl: 2rem;
+  --radius-full: 9999rem;
+
+  --color-text: var(--neutral-95);
+  --color-text-light: var(--neutral-80);
+  --color-text-lightest: var(--neutral-60);
+
+  --color-text-contrast: rgba(255, 255, 255, 1);
+  --color-text-contrast-light: rgba(255, 255, 255, 0.8);
+  --color-text-contrast-lightest: rgba(255, 255, 255, 0.6);
+
+  --color-neutral-indicator: var(--neutral-60);
+  --color-neutral-subtle: var(--neutral-05);
+  --color-neutral-surface: var(--neutral-10);
+  --color-neutral-contrast: var(--neutral-90);
+
+  --color-brand-indicator: var(--brand-60);
+  --color-brand-subtle: var(--brand-05);
+  --color-brand-surface: var(--brand-10);
+  --color-brand-contrast: var(--brand-90);
+
+  --color-accent-indicator: var(--accent-60);
+  --color-accent-subtle: var(--accent-05);
+  --color-accent-surface: var(--accent-10);
+  --color-accent-contrast: var(--accent-90);
+
+  --border: 1px solid var(--neutral-30);
+}

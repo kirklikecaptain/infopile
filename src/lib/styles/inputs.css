@@ -1,0 +1,45 @@
+.button,
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  text-align: center;
+  dislpay: inline-block;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  line-height: var(--line-height-md);
+  color: var(--scheme-95);
+  background-color: var(--scheme-10);
+  border-radius: var(--radius-sm);
+  border: none;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: var(--scheme-20);
+  }
+
+  &[data-scheme]:not(.secondary) {
+    color: var(--scheme-05);
+    background-color: var(--scheme-60);
+
+    &:hover {
+      background-color: var(--scheme-70);
+    }
+  }
+}
+
+input:not([type]),
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="url"],
+textarea {
+  padding: 0.5rem;
+  width: 100%;
+  border: var(--border);
+  border-radius: var(--radius-sm);
+}

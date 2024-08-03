@@ -1,0 +1,10 @@
+body {
+  font-family: var(--font);
+  line-height: var(--line-height-lg);
+  color: var(--color-text);
+  accent-color: var(--color-accent-indicator);
+}
+
+label {
+  font-size: var(--text-xs);
+}

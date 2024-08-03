@@ -1,7 +1,6 @@
-import { auth } from "$lib/server/auth";
 import { fail, redirect } from "@sveltejs/kit";
 import { verify } from "@node-rs/argon2";
-import { db } from "$lib/server/db";
+import { auth, db } from "$lib/server/db";
 
 import type { Actions, PageServerLoad } from "./$types";
 import { isValidPassword, isValidUsername } from "$lib/utils/validation";
