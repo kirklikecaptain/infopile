@@ -1,27 +1,21 @@
-import { auth, db } from "$lib/server/db";
 import { fail } from "@sveltejs/kit";
 import type { Actions, PageServerLoad } from "./$types";
+import { getRecentPosts } from "$lib/server/post";
+import { auth } from "$lib/server/auth";
+import { ClientErrorCode } from "$lib/utils/status-codes";
 
 export const load: PageServerLoad = async () => {
-  const posts = await db.post.findMany({
-    include: {
-      author: {
-        select: {
-          username: true
-        }
-      }
-    }
-  });
+  const recentPosts = await getRecentPosts();
 
   return {
-    posts
+    recentPosts
   };
 };
 
 export const actions: Actions = {
   logout: async (event) => {
     if (!event.locals.session) {
-      return fail(401);
+      return fail(ClientErrorCode.Unauthorized);
     }
 
     await auth.invalidateSession(event.locals.session.id);

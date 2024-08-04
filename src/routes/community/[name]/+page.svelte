@@ -5,9 +5,9 @@
 </script>
 
 <main>
-  <h1><a href={data.post.url}>{data.post?.title}</a></h1>
-  <p>by {data.post.author.username}</p>
-  <p>{data.post.description}</p>
+  <h1>{data.community.name}</h1>
+  <p>Created by {data.community.creator.username}</p>
+  <p>{data.community.description}</p>
 </main>
 
 <style lang="postcss">

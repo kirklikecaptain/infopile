@@ -1,11 +1,9 @@
 import { Lucia } from "lucia";
 import { PrismaAdapter } from "@lucia-auth/adapter-prisma";
-import { PrismaClient } from "@prisma/client";
 import { dev } from "$app/environment";
+import { prisma } from "./prisma";
 
-export const db = new PrismaClient();
-
-const adapter = new PrismaAdapter(db.session, db.user);
+const adapter = new PrismaAdapter(prisma.session, prisma.user);
 
 export const auth = new Lucia(adapter, {
   sessionCookie: {
@@ -18,11 +16,13 @@ export const auth = new Lucia(adapter, {
   })
 });
 
+export interface UserAttributes {
+  username: string;
+}
+
 declare module "lucia" {
   interface Register {
     Lucia: typeof auth;
-    DatabaseUserAttributes: {
-      username: string;
-    };
+    DatabaseUserAttributes: UserAttributes;
   }
 }

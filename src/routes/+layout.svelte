@@ -17,10 +17,10 @@
         <form use:enhance action="/?/logout" method="post">
           <button>Log Out</button>
         </form>
-        <a href="/submit" class="button" data-scheme="accent">New Post</a>
+        <a href="/new/post" class="button" data-scheme="primary">New Post</a>
       {:else}
-        <a href="/login" class="button secondary">Log In</a>
-        <a href="/signup" class="button" data-scheme="accent">Sign Up</a>
+        <a href="/user/login" class="button secondary">Log In</a>
+        <a href="/user/signup" class="button" data-scheme="accent">Sign Up</a>
       {/if}
     </nav>
   </header>

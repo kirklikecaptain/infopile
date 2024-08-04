@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { getPostPath } from "$lib/utils/url";
   import type { PageData } from "./$types";
 
   export let data: PageData;
@@ -7,10 +8,10 @@
 <main>
   <h1>Home Page</h1>
   <div>
-    {#each data.posts as post}
+    {#each data.recentPosts as post}
       <article>
-        <a href={`/p/${post.id}`}><h2>{post.title}</h2></a>
-        <p>by {post.author.username}</p>
+        <a href={getPostPath(post.community.name, post.id)}><h2>{post.title}</h2></a>
+        <p>by {post.author.username} in {post.community.name}</p>
         <p>{post.description}</p>
       </article>
     {/each}
