@@ -47,9 +47,11 @@
     "@lucia-auth/adapter-sqlite": "^3.0.2",
     "@node-rs/argon2": "^1.8.3",
     "@prisma/client": "^5.17.0",
+    "classnames": "^2.5.1",
     "lucia": "^3.2.0",
     "postcss": "^8.4.40",
     "postcss-custom-media": "^10.0.8",
-    "postcss-import": "^16.1.0"
+    "postcss-import": "^16.1.0",
+    "svelte-exmarkdown": "^3.0.5"
   }
 }

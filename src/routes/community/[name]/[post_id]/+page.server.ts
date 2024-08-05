@@ -4,7 +4,7 @@ import { getPostById } from "$lib/server/post";
 import { ClientErrorCode } from "$lib/utils/status-codes";
 
 export const load: PageServerLoad = async ({ params }) => {
-  const post = await getPostById(params.id);
+  const post = await getPostById(params.post_id);
 
   if (!post) {
     return error(ClientErrorCode.NotFound, "Post Not Found");

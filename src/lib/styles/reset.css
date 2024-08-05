@@ -144,8 +144,9 @@ svg {
   max-width: 100%;
 }
 
-textarea:not([rows]) {
-  min-height: 10em;
+textarea {
+  min-height: 3em;
+  resize: vertical;
 }
 
 ul[role="list"],

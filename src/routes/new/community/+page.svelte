@@ -25,9 +25,7 @@
 
 <style lang="postcss">
   main {
-    flex-grow: 1;
     padding: 4rem;
-    background: var(--neutral-05);
   }
 
   h1 {

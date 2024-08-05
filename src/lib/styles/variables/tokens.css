@@ -1,12 +1,20 @@
 :root {
-  --font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
+  --text-xxs: 0.0625rem;
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
   --text-md: 1rem;
   --text-lg: 1.25rem;
   --text-xl: 1.5rem;
   --text-xxl: 2rem;
+
+  --text-primary: rgba(0, 0, 0, 0.9);
+  --text-secondary: rgba(0, 0, 0, 0.7);
+  --text-tertiary: rgba(0, 0, 0, 0.6);
+  --text-contrast: rgba(255, 255, 255, 1);
+  --text-contrast-secondary: rgba(255, 255, 255, 0.8);
+  --text-contrast-tertiary: rgba(255, 255, 255, 0.6);
 
   --line-height-sm: 1;
   --line-height-md: 1.2;
@@ -18,28 +26,97 @@
   --radius-xl: 2rem;
   --radius-full: 9999rem;
 
-  --color-text: var(--neutral-95);
-  --color-text-light: var(--neutral-80);
-  --color-text-lightest: var(--neutral-60);
+  --space-xxs: 0.125rem;
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --space-xl: 4rem;
+  --space-xxl: 8rem;
 
-  --color-text-contrast: rgba(255, 255, 255, 1);
-  --color-text-contrast-light: rgba(255, 255, 255, 0.8);
-  --color-text-contrast-lightest: rgba(255, 255, 255, 0.6);
+  --border-style: solid 1px;
+  --border: var(--border-style) var(--slate-30);
 
-  --color-neutral-indicator: var(--neutral-60);
-  --color-neutral-subtle: var(--neutral-05);
-  --color-neutral-surface: var(--neutral-10);
-  --color-neutral-contrast: var(--neutral-90);
+  --color-00: #ffffff;
+  --color-05: var(--slate-05);
+  --color-10: var(--slate-10);
+  --color-20: var(--slate-20);
+  --color-30: var(--slate-30);
+  --color-40: var(--slate-40);
+  --color-50: var(--slate-50);
+  --color-60: var(--slate-60);
+  --color-70: var(--slate-70);
+  --color-80: var(--slate-80);
+  --color-90: var(--slate-90);
+  --color-95: var(--slate-95);
+}
 
-  --color-brand-indicator: var(--brand-60);
-  --color-brand-subtle: var(--brand-05);
-  --color-brand-surface: var(--brand-10);
-  --color-brand-contrast: var(--brand-90);
+[data-scheme="primary"] {
+  --color-05: var(--blue-05);
+  --color-10: var(--blue-10);
+  --color-20: var(--blue-20);
+  --color-30: var(--blue-30);
+  --color-40: var(--blue-40);
+  --color-50: var(--blue-50);
+  --color-60: var(--blue-60);
+  --color-70: var(--blue-70);
+  --color-80: var(--blue-80);
+  --color-90: var(--blue-90);
+  --color-95: var(--blue-95);
+}
 
-  --color-accent-indicator: var(--accent-60);
-  --color-accent-subtle: var(--accent-05);
-  --color-accent-surface: var(--accent-10);
-  --color-accent-contrast: var(--accent-90);
+[data-scheme="accent"] {
+  --color-05: var(--fire-05);
+  --color-10: var(--fire-10);
+  --color-20: var(--fire-20);
+  --color-30: var(--fire-30);
+  --color-40: var(--fire-40);
+  --color-50: var(--fire-50);
+  --color-60: var(--fire-60);
+  --color-70: var(--fire-70);
+  --color-80: var(--fire-80);
+  --color-90: var(--fire-90);
+  --color-95: var(--fire-95);
+}
 
-  --border: 1px solid var(--neutral-30);
+[data-scheme="success"] {
+  --color-05: var(--emerald-05);
+  --color-10: var(--emerald-10);
+  --color-20: var(--emerald-20);
+  --color-30: var(--emerald-30);
+  --color-40: var(--emerald-40);
+  --color-50: var(--emerald-50);
+  --color-60: var(--emerald-60);
+  --color-70: var(--emerald-70);
+  --color-80: var(--emerald-80);
+  --color-90: var(--emerald-90);
+  --color-95: var(--emerald-95);
+}
+
+[data-scheme="error"] {
+  --color-05: var(--red-05);
+  --color-10: var(--red-10);
+  --color-20: var(--red-20);
+  --color-30: var(--red-30);
+  --color-40: var(--red-40);
+  --color-50: var(--red-50);
+  --color-60: var(--red-60);
+  --color-70: var(--red-70);
+  --color-80: var(--red-80);
+  --color-90: var(--red-90);
+  --color-95: var(--red-95);
+}
+
+[data-scheme="warning"] {
+  --color-05: var(--amber-05);
+  --color-10: var(--amber-10);
+  --color-20: var(--amber-20);
+  --color-30: var(--amber-30);
+  --color-40: var(--amber-40);
+  --color-50: var(--amber-50);
+  --color-60: var(--amber-60);
+  --color-70: var(--amber-70);
+  --color-80: var(--amber-80);
+  --color-90: var(--amber-90);
+  --color-95: var(--amber-95);
 }

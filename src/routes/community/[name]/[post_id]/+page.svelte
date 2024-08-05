@@ -20,8 +20,4 @@
     font-size: 2rem;
     margin-bottom: 1rem;
   }
-
-  a {
-    color: var(--primary-60);
-  }
 </style>

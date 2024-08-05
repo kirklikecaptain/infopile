@@ -1,5 +1,5 @@
 export function getPostPath(community: string, postId: string): string {
-  return `/community/${community}/post/${postId}`;
+  return `/community/${community}/${postId}`;
 }
 
 export function getCommunityPath(name: string): string {

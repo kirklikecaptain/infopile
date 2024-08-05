@@ -35,7 +35,7 @@
 
   form {
     margin: auto;
-    max-width: 500px;
+    max-width: 400px;
     display: grid;
     gap: 1.5rem;
     padding: 1.5rem;
