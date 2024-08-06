@@ -2,7 +2,8 @@ const validRegex = {
   username: /^[a-zA-Z0-9_-]{3,50}$/,
   password: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,40}$/,
   email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-  slug: /^[a-z0-9_-]+$/
+  slug: /^[a-z0-9_-]+$/,
+  communityName: /^[a-zA-Z0-9_-]{2,40}$/
 };
 
 export function validateInput(type: keyof typeof validRegex, value: unknown): value is string {

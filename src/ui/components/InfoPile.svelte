@@ -18,7 +18,7 @@
     </svg>
   {/if}
   {#if showText}
-    <span class="text">Info<span>Pile</span></span>
+    <span>Info<span>Pile</span></span>
   {/if}
 </div>
 
@@ -52,7 +52,7 @@
     filter: grayscale(100%);
   }
 
-  .text {
+  span {
     font-weight: bold;
 
     span {

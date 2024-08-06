@@ -1,7 +1,7 @@
-export function getPostPath(community: string, postId: string): string {
-  return `/community/${community}/${postId}`;
+export function getPostPath(communityName: string, postId: string): string {
+  return `/c/${communityName}/${postId}`;
 }
 
-export function getCommunityPath(name: string): string {
-  return `/community/${name}`;
+export function getCommunityPath(communityName: string): string {
+  return `/c/${communityName}`;
 }

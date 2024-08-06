@@ -11,18 +11,21 @@ model User {
   id                 String      @id @default(cuid())
   username           String      @unique
   passwordHash       String
-  isAdmin            Boolean     @default(false)
   dateJoined         DateTime    @default(now())
-  sessions           Session[]
-  posts              Post[]
-  communitiesCreated Community[]
+  dateUpdated        DateTime    @updatedAt
+  sessions           Session[]   @relation("UserSessions")
+  posts              Post[]      @relation("UserCreatedPosts")
+  communitiesCreated Community[] @relation("UserCreatedCommunities")
+  communities        Community[] @relation("CommunityMembers")
+
+  @@index([username])
 }
 
 model Session {
   id        String   @id @default(cuid())
   expiresAt DateTime
   userId    String
-  user      User     @relation(references: [id], fields: [userId], onDelete: Cascade)
+  user      User     @relation("UserSessions", references: [id], fields: [userId], onDelete: Cascade)
 }
 
 model Post {
@@ -33,9 +36,9 @@ model Post {
   dateCreated DateTime  @default(now())
   dateUpdated DateTime  @updatedAt
   authorId    String
-  author      User      @relation(fields: [authorId], references: [id])
   communityId String
-  community   Community @relation(fields: [communityId], references: [id])
+  author      User      @relation("UserCreatedPosts", fields: [authorId], references: [id])
+  community   Community @relation("CommunityPosts", fields: [communityId], references: [id], onDelete: Cascade)
 }
 
 model Community {
@@ -45,6 +48,9 @@ model Community {
   dateCreated DateTime @default(now())
   dateUpdated DateTime @updatedAt
   creatorId   String
-  creator     User     @relation(fields: [creatorId], references: [id])
-  posts       Post[]
+  creator     User     @relation("UserCreatedCommunities", fields: [creatorId], references: [id])
+  posts       Post[]   @relation("CommunityPosts")
+  members     User[]   @relation("CommunityMembers")
+
+  @@index([name])
 }

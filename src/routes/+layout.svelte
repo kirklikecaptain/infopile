@@ -1,9 +1,8 @@
 <script lang="ts">
-  import "$lib/styles/_index.css";
-  import { enhance } from "$app/forms";
-  import InfoPile from "$lib/components/InfoPile.svelte";
-  import type { LayoutData } from "./$types";
+  import "$styles/_index.css";
   import { page } from "$app/stores";
+  import InfoPile from "$components/InfoPile.svelte";
+  import type { LayoutData } from "./$types";
 
   export let data: LayoutData;
 
@@ -14,29 +13,32 @@
 
 <div class="layout">
   <header>
-    {#if showHomeLink}
-      <a class="home" href="/">
-        <InfoPile variant="icon" />
-      </a>
-    {:else}
-      <InfoPile />
-    {/if}
+    <div class="left">
+      {#if showHomeLink}
+        <a class="home" href="/">
+          <InfoPile />
+        </a>
+      {:else}
+        <InfoPile />
+      {/if}
+    </div>
     <nav>
       {#if data.user}
         <div class="user-menu">
-          <button class="outline">
+          <div>
             {data.user.username}
-          </button>
-          <div class="user-dropdown">
-            <form use:enhance action="/?/logout" method="POST">
-              <button class="secondary" data-scheme="accent">Log Out</button>
-            </form>
+          </div>
+          <div class="dropdown">
+            <div class="content">
+              <a href="/user/logout" class="button subtle" data-scheme="error">Log Out</a>
+            </div>
           </div>
         </div>
-        <a href="/new/post" class="button secondary" data-scheme="primary">New Post</a>
+        <a href="/new/post" class="button" data-scheme="primary">New Post</a>
+        <a href="/new/community" class="button" data-scheme="primary">New Community</a>
       {:else}
         {#if showLoginLink}
-          <a href="/user/login" class="button secondary">Log In</a>
+          <a href="/user/login" class="button outline">Log In</a>
         {/if}
         {#if showSignupLink}
           <a href="/user/signup" class="button" data-scheme="accent">Sign Up</a>
@@ -62,6 +64,12 @@
     padding: 1rem;
     border-bottom: var(--border);
 
+    .left {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+    }
+
     .home {
       display: block;
     }
@@ -69,34 +77,35 @@
     nav {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: var(--space-md);
     }
 
     .user-menu {
       position: relative;
 
-      &:hover .user-dropdown {
+      &:hover .dropdown {
         display: block;
       }
 
-      .user-dropdown {
+      .dropdown {
         display: none;
         position: absolute;
         top: 100%;
         right: 50%;
-        padding-top: var(--space-sm);
+        padding-top: var(--space-md);
         z-index: 1;
         transform: translateX(50%);
 
-        form {
-          background: var(--color-00);
+        .content {
           border: var(--border);
           border-radius: var(--radius-md);
           padding: var(--space-md);
-        }
+          background: var(--color-00);
 
-        button {
-          white-space: nowrap;
+          a {
+            display: block;
+            white-space: nowrap;
+          }
         }
       }
     }

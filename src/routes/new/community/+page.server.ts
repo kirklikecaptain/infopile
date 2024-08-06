@@ -2,7 +2,7 @@ import { fail, redirect } from "@sveltejs/kit";
 import type { Actions } from "./$types";
 import { ClientErrorCode, RedirectCode } from "$lib/utils/status-codes";
 import { validateInput } from "$lib/utils/validation";
-import { createCommunity } from "$lib/server/community";
+import { createCommunity, getCommunityBySoftNameMatch } from "$lib/server/community";
 import { getCommunityPath } from "$lib/utils/url";
 
 export const actions: Actions = {
@@ -17,7 +17,7 @@ export const actions: Actions = {
     const name = formData.get("name");
     const description = formData.get("description")?.toString();
 
-    if (!validateInput("slug", name)) {
+    if (!validateInput("communityName", name)) {
       return fail(ClientErrorCode.BadRequest, {
         message: "Invalid community name"
       });
@@ -25,7 +25,15 @@ export const actions: Actions = {
 
     if (!description) {
       return fail(ClientErrorCode.BadRequest, {
-        message: "Description is required"
+        message: "A community description is required"
+      });
+    }
+
+    const existingCommunity = await getCommunityBySoftNameMatch(name);
+
+    if (existingCommunity) {
+      return fail(ClientErrorCode.BadRequest, {
+        message: `Community name is already exists: c/${existingCommunity.name} `
       });
     }
 
